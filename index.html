@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>farzynova</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('bg.gif') no-repeat center center/cover;
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+
+            /* Disable text selection */
+            user-select: none; /* For most browsers */
+            -webkit-user-select: none; /* For Safari */
+            -moz-user-select: none; /* For Firefox */
+            -ms-user-select: none; /* For Internet Explorer */
+        }
+
+        /* Shadow overlay for better readability */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1); /* Darker semi-transparent overlay */
+            z-index: 1;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            animation: rainbow 5s infinite linear;
+            z-index: 2; /* Above the overlay */
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        .line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Spacing between emojis and text */
+            animation: fadeIn 2s ease-in-out, glow 1.5s infinite alternate;
+            transition: transform 0.3s ease, text-shadow 0.3s ease, opacity 0.3s ease;
+        }
+
+        .line.sticky {
+            opacity: 1 !important; /* Always fully visible */
+            animation: none; /* Remove any animation */
+        }
+
+        .line a {
+            text-decoration: none;
+            color: inherit; /* Inherit text color */
+            transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth hover animation */
+        }
+
+        .line span {
+            animation: rainbow 5s infinite linear;
+            text-shadow: 0 0 5px white, 0 0 15px yellow, 0 0 20px lightblue, 0 0 30px lightgreen, 0 0 40px pink;
+        }
+
+        .line a:hover {
+            text-shadow: 0 0 20px white, 0 0 30px yellow, 0 0 40px lightblue, 0 0 50px lightgreen, 0 0 60px pink;
+        }
+
+        .emoji {
+            width: 1em; /* Matches text size */
+            height: 1em; /* Matches text size */
+            animation: float 3s infinite ease-in-out; /* Floating animation for the emoji */
+            transition: transform 0.3s ease; /* Smooth hover animation */
+        }
+
+        .line:hover {
+            animation: none; /* Stop animation on hover */
+            transform: translateY(-10px); /* Move the line upward */
+        }
+
+        .line:hover .emoji {
+            transform: scale(1.2); /* Enlarge emoji when hovering over the text */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glow {
+            from { 
+                text-shadow: 0 0 10px white, 0 0 20px cyan; 
+            }
+            to { 
+                text-shadow: 0 0 20px white, 0 0 30px lightyellow; 
+            }
+        }
+
+        @keyframes rainbow {
+            0% { color: white; }
+            20% { color: lightyellow; }
+            40% { color: lightblue; }
+            60% { color: lightgreen; }
+            80% { color: pink; }
+            100% { color: white; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Responsive adjustments for smaller devices */
+        @media (max-width: 1024px) {
+            .container {
+                transform: scale(0.8); /* Scale down for tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                transform: scale(0.6); /* Scale down for mobile devices */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                transform: scale(0.4); /* Further scale down for small mobile devices */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Shadow Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Animated Text -->
+    <div class="container">
+        <!-- First line (sticky, no link) -->
+        <div class="line sticky" style="font-size: 6rem;">
+            <img src="nezuko.gif" class="emoji" alt="emoji">
+            <span>FarzyNova</span>
+            <img src="nezuko.gif" class="emoji" alt="emoji">
+        </div>
+
+        <!-- Remaining lines with links -->
+        <div class="line" style="font-size: 6rem;">
+            <img src="line2.gif" class="emoji" alt="emoji">
+            <a href="https://discord.gg/WcqbrS77Mm" target="_blank">
+                <span>Discord</span>
+            </a>
+            <img src="l21.gif" class="emoji" alt="emoji">
+        </div>
+        <div class="line" style="font-size: 6rem;">
+            <img src="line3.gif" class="emoji" alt="emoji">
+            <a href="https://link.clashofclans.com/en?action=OpenClanProfile&tag=2QPYUVLU9" target="_blank">
+                <span>Clash Of Clans</span>
+            </a>
+            <img src="line3.gif" class="emoji" alt="emoji">
+        </div>
+        <div class="line" style="font-size: 6rem;">
+            <img src="line4.gif" class="emoji" alt="emoji">
+            <a href="https://discord.com/users/1215718234431426662" target="_blank">
+                <span>Contact</span>
+            </a>
+            <img src="line4.gif" class="emoji" alt="emoji">
+        </div>
+        <div class="line" style="font-size: 6rem;">
+            <img src="line5.gif" class="emoji" alt="emoji">
+            <a href="https://github.com/farzynova" target="_blank">
+                <span>Github</span>
+            </a>
+            <img src="line5.gif" class="emoji" alt="emoji">
+        </div>
+    </div>
+
+    <script>
+        // Disable right-click context menu
+        document.addEventListener("contextmenu", (event) => {
+            event.preventDefault(); // Prevent right-click menu
+        });
+
+        // Disable text selection and right-click on the entire webpage
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.addEventListener("mousedown", (event) => {
+                event.preventDefault(); // Prevent left-click to avoid text selection
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let lines = document.querySelectorAll(".line:not(.sticky)"); // Exclude the sticky line
+            let index = 0;
+            setInterval(() => {
+                lines.forEach(line => line.style.opacity = "1"); // Keep all lines lit
+                if (!document.querySelector(":hover")?.classList.contains("line")) {
+                    lines.forEach(line => line.style.animation = "glow 10s infinite alternate");
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
